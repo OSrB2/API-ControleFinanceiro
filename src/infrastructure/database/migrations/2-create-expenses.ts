@@ -15,11 +15,25 @@ export default {
         unique: true,
       },
       value: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
+      category: {
+        type: DataTypes.ENUM(
+          'Alimentação',
+          'Saúde',
+          'Moradia',
+          'Transporte',
+          'Educação',
+          'Lazer',
+          'Imprevistos',
+          'Outras'
+        ),
+        allowNull: true,
+        defaultValue: 'Outras',
+      },
       date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
       createdAt: {
